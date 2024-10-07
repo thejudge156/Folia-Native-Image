@@ -1,0 +1,19 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: The Judge <colepatirckroberts@gmail.com>
+Date: Mon, 7 Oct 2024 06:52:05 -0700
+Subject: [PATCH] G1 only exists in EA builds
+
+
+diff --git a/build.gradle.kts b/build.gradle.kts
+index d8ee8823234de1bc248758b6f3cf81634fb4fa5f..08f9ccedb36946acdb962e2cde75a6242aed5695 100644
+--- a/build.gradle.kts
++++ b/build.gradle.kts
+@@ -250,7 +250,7 @@ graalvmNative {
+         }
+     }
+     binaries.all {
+-        buildArgs.addAll("--verbose", "--gc=g1", "--enable-http", "--enable-https",
++        buildArgs.addAll("--verbose", "--gc=parallel", "--enable-http", "--enable-https",
+             "-H:+AddAllCharsets", "-H:+IncludeAllLocales", "-H:IncludeResources=data/.*", "-march=native")
+     }
+ }
