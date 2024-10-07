@@ -9,7 +9,7 @@ add explicit block update suppression techniques, it's better
 than the server crashing.
 
 diff --git a/src/main/java/net/minecraft/world/level/Level.java b/src/main/java/net/minecraft/world/level/Level.java
-index a5e33a174c5aa8e836c3badeaf265453e5e65518..a57d89b35fa04cd02dc1df87b7d0924550a3e573 100644
+index 42e1a64ded0eb1ab93a679d7f75be92072541f9e..a036ca0c0a6602f3856ec179421e30967f7cc418 100644
 --- a/src/main/java/net/minecraft/world/level/Level.java
 +++ b/src/main/java/net/minecraft/world/level/Level.java
 @@ -1749,7 +1749,7 @@ public abstract class Level implements LevelAccessor, AutoCloseable {
@@ -22,7 +22,7 @@ index a5e33a174c5aa8e836c3badeaf265453e5e65518..a57d89b35fa04cd02dc1df87b7d09245
  
                  if (iblockdata.is(Blocks.COMPARATOR)) {
 diff --git a/src/main/java/net/minecraft/world/level/block/DetectorRailBlock.java b/src/main/java/net/minecraft/world/level/block/DetectorRailBlock.java
-index 9d69e439ff853465303c2abd896e6c5314752e1e..8313d0a927b693fb355c9d6bd5284c5a78d5f322 100644
+index 0b88f70202e0b22ca876977292ba90e749df98bb..43b48172af3a28cda8d3368f175cfb622f1744c8 100644
 --- a/src/main/java/net/minecraft/world/level/block/DetectorRailBlock.java
 +++ b/src/main/java/net/minecraft/world/level/block/DetectorRailBlock.java
 @@ -134,9 +134,9 @@ public class DetectorRailBlock extends BaseRailBlock {
@@ -38,7 +38,7 @@ index 9d69e439ff853465303c2abd896e6c5314752e1e..8313d0a927b693fb355c9d6bd5284c5a
  
      }
 diff --git a/src/main/java/net/minecraft/world/level/block/PoweredRailBlock.java b/src/main/java/net/minecraft/world/level/block/PoweredRailBlock.java
-index 9603d8c84ff483030dc08e82d3579b89e5c1f6e9..4148a7fa8ba249d34ba670b015b123c943a225e8 100644
+index 415294342d3a1f6409b791e45b7a8558c64032a9..0ae201bbca416997008461ac0eb7ecdb9a1ab718 100644
 --- a/src/main/java/net/minecraft/world/level/block/PoweredRailBlock.java
 +++ b/src/main/java/net/minecraft/world/level/block/PoweredRailBlock.java
 @@ -104,9 +104,9 @@ public class PoweredRailBlock extends BaseRailBlock {
@@ -54,7 +54,7 @@ index 9603d8c84ff483030dc08e82d3579b89e5c1f6e9..4148a7fa8ba249d34ba670b015b123c9
          } else {
              RailShape blockpropertytrackposition1 = (RailShape) iblockdata.getValue(PoweredRailBlock.SHAPE);
 diff --git a/src/main/java/net/minecraft/world/level/block/RedStoneWireBlock.java b/src/main/java/net/minecraft/world/level/block/RedStoneWireBlock.java
-index c4471342eea4f9e2b0916fc1c5f1b24bc07757fd..32bf3d9b5482a85e23e7f6ad21392a5d16ba3fee 100644
+index 96247484fa34000370b316f2eed56c9a8e749f9d..2dd24aa06fe7d3579ef248266f55fa1d46ffc3c5 100644
 --- a/src/main/java/net/minecraft/world/level/block/RedStoneWireBlock.java
 +++ b/src/main/java/net/minecraft/world/level/block/RedStoneWireBlock.java
 @@ -199,8 +199,9 @@ public class RedStoneWireBlock extends Block {

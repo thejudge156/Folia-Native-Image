@@ -1,0 +1,31 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: The Judge <colepatirckroberts@gmail.com>
+Date: Sun, 6 Oct 2024 22:45:24 -0700
+Subject: [PATCH] Linux
+
+
+diff --git a/build.gradle.kts b/build.gradle.kts
+index 82ffbb3add3cb49bb767df974b2b78698957908e..d8ee8823234de1bc248758b6f3cf81634fb4fa5f 100644
+--- a/build.gradle.kts
++++ b/build.gradle.kts
+@@ -241,16 +241,16 @@ graalvmNative {
+             classpath(runtimeClasspathWithoutVanillaServer)
+             imageName.set("folia")
+             mainClass.set("org.bukkit.craftbukkit.Main")
+-            buildArgs.add("-O4")
++            buildArgs.add("-O3")
+         }
+         named("test") {
+             classpath(tasks.includeMappings.flatMap { it.outputJar })
+             classpath(runtimeClasspathWithoutVanillaServer)
+-            buildArgs.add("-O0")
++            buildArgs.add("-Ob")
+         }
+     }
+     binaries.all {
+-        buildArgs.addAll("--verbose", "--gc=parallel", "--enable-http", "--enable-https",
+-            "-H:+AddAllCharsets", "-H:+IncludeAllLocales", "-H:IncludeResources=data/.*")
++        buildArgs.addAll("--verbose", "--gc=g1", "--enable-http", "--enable-https",
++            "-H:+AddAllCharsets", "-H:+IncludeAllLocales", "-H:IncludeResources=data/.*", "-march=native")
+     }
+ }

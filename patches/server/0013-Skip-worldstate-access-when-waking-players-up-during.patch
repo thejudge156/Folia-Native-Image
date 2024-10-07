@@ -9,7 +9,7 @@ data deserialization and is racey even in Vanilla. But in Folia,
 some accesses may throw and as such we need to fix this directly.
 
 diff --git a/src/main/java/net/minecraft/server/level/ServerPlayer.java b/src/main/java/net/minecraft/server/level/ServerPlayer.java
-index 337763efee2c62721ec1320bd749ab55aeb84120..8ee61c2415455f8d4ff1ae687753117a40eb687b 100644
+index 933f0e7ef415c881fb11084ece749917e9eacf5f..05e2868b49b72b14aa8abd30269f687aadfc0eb2 100644
 --- a/src/main/java/net/minecraft/server/level/ServerPlayer.java
 +++ b/src/main/java/net/minecraft/server/level/ServerPlayer.java
 @@ -673,7 +673,7 @@ public class ServerPlayer extends Player {
@@ -22,7 +22,7 @@ index 337763efee2c62721ec1320bd749ab55aeb84120..8ee61c2415455f8d4ff1ae687753117a
  
          // CraftBukkit start
 diff --git a/src/main/java/net/minecraft/world/entity/LivingEntity.java b/src/main/java/net/minecraft/world/entity/LivingEntity.java
-index f792fd137a964a40e2246d31ab2ddbbdeba6eab6..ed628d38136534b3391c0a06b9c892a922710235 100644
+index d0517a52eb4d126550104586e0c722002ab6ab45..f03ca313e64c21ee5dc6a348a26da28530dd1951 100644
 --- a/src/main/java/net/minecraft/world/entity/LivingEntity.java
 +++ b/src/main/java/net/minecraft/world/entity/LivingEntity.java
 @@ -4366,6 +4366,11 @@ public abstract class LivingEntity extends Entity implements Attackable {
