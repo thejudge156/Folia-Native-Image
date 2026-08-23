@@ -1,0 +1,22 @@
+--- a/src/main/java/org/bukkit/event/Event.java
++++ b/src/main/java/org/bukkit/event/Event.java
+@@ -15,6 +_,7 @@
+  */
+ public abstract class Event {
+ 
++    private String name;
+     private final boolean isAsync;
+ 
+     /**
+@@ -59,7 +_,10 @@
+      */
+     @NotNull
+     public String getEventName() {
+-        return this.getClass().getSimpleName();
++        if (this.name == null) {
++            this.name = this.getClass().getSimpleName();
++        }
++        return this.name;
+     }
+ 
+     @NotNull
