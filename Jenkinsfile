@@ -20,7 +20,6 @@ pipeline {
 				anyOf {
 					changeset 'folia-server/**/*'
 					changeset 'folia-api/**/*'
-					changeset 'Jenkinsfile'
 				}
 			}
 			steps {
