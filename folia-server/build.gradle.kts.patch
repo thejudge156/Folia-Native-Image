@@ -161,7 +161,7 @@
 +    }
 +    binaries {
 +        named("main") {
-+            classpath(tasks.jar)
++            classpath(tasks.jar.flatMap { it.archiveFile })
 +            imageName.set("folia")
 +            mainClass.set("org.bukkit.craftbukkit.Main")
 +            sharedLibrary.set(false)
