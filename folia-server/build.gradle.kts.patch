@@ -126,7 +126,7 @@
      versionFamily(paperweight.minecraftVersion.map { it.split(".", "-").takeWhile { part -> part.toIntOrNull() != null }.take(2).joinToString(".") })
      version(paperweight.minecraftVersion)
  
-@@ -340,5 +_,80 @@
+@@ -340,5 +_,79 @@
                  nameResolver.set { project, _, version, build -> "$project-$version-$build.jar" }
              }
          }
@@ -161,7 +161,6 @@
 +    binaries {
 +        named("main") {
 +            imageName.set("libfolia")
-+            mainClass.set("org.bukkit.craftbukkit.Main")
 +            classpath(tasks.jar)
 +            classpath(configurations.runtimeClasspath)
 +            buildArgs.addAll("-H:LayerCreate=module=java.base,module=jdk.jfr," +
