@@ -126,7 +126,7 @@
      versionFamily(paperweight.minecraftVersion.map { it.split(".", "-").takeWhile { part -> part.toIntOrNull() != null }.take(2).joinToString(".") })
      version(paperweight.minecraftVersion)
  
-@@ -340,5 +_,79 @@
+@@ -340,5 +_,74 @@
                  nameResolver.set { project, _, version, build -> "$project-$version-$build.jar" }
              }
          }
@@ -144,18 +144,6 @@
 +                outputDirectories.add("src/main/resources/META-INF/native-image/me.judge")
 +                mergeWithExisting.set(true)
 +            }
-+        }
-+    }
-+    layers {
-+        create("folia-api") {
-+            contents {
-+                modules.addAll("java.base", "jdk.jfr", "java.scripting", "java.sql", "java.management")
-+                fromConfiguration(configurations.runtimeClasspath)
-+                packages.addAll(
-+                    "com.destroystokyo.paper", "io.papermc.paper", "org.spigotmc", "org.bukkit"
-+                )
-+            }
-+            buildArgs.add("--initialize-at-run-time=io.netty")
 +        }
 +    }
 +    binaries {
@@ -183,6 +171,13 @@
 +            imageName.set("folia")
 +            mainClass.set("org.bukkit.craftbukkit.Main")
 +            buildArgs.add("--pgo=$projectDir/pgo-profiles/default.iprof")
++            sharedLibrary.set(false)
++        }
++        create("plugin") {
++            classpath("$rootDir/test-plugins/Geyser-Spigot.jar", "$rootDir/test-plugins/MainWrapper-1.0-SNAPSHOT.jar")
++            imageName.set("server")
++            mainClass.set("me.judge.mainwrapper.Main")
++            buildArgs.addAll("-H:LayerUse=$projectDir/build/native/nativeCompile/libfolia.nil", "-H:Preserve=path=$rootDir/test-plugins/Geyser-Spigot.jar")
 +            sharedLibrary.set(false)
 +        }
 +        named("test") {
