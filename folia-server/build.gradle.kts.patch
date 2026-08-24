@@ -126,7 +126,7 @@
      versionFamily(paperweight.minecraftVersion.map { it.split(".", "-").takeWhile { part -> part.toIntOrNull() != null }.take(2).joinToString(".") })
      version(paperweight.minecraftVersion)
  
-@@ -340,5 +_,74 @@
+@@ -340,5 +_,77 @@
                  nameResolver.set { project, _, version, build -> "$project-$version-$build.jar" }
              }
          }
@@ -151,7 +151,10 @@
 +            contents {
 +                modules("java.base", "jdk.jfr", "java.scripting", "java.sql", "java.management")
 +                fromConfiguration(configurations.runtimeClasspath)
-+                packages("net.minecraft", "com.mojang.logging", "com.mojang.authlib.yggdrasil", "io.papermc.paper", "org.spigotmc", "org.bukkit")
++                packages(
++                    "net.minecraft", "com.mojang.logging", "com.mojang.authlib.yggdrasil", "com.mojang.brigadier",
++                    "io.papermc.paper", "org.spigotmc", "org.bukkit"
++                )
 +            }
 +            buildArgs.add("--initialize-at-run-time=io.netty")
 +        }
