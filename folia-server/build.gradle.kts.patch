@@ -150,7 +150,7 @@
 +        create("folia-api") {
 +            contents {
 +                modules("java.base", "jdk.jfr", "java.scripting", "java.sql", "java.management")
-+                fromConfiguration(configurations.runtimeClasspath.filter { it != tasks.jar.get().archiveFile.get().asFile })
++                from(configurations.runtimeClasspath.get().copy().minus(sourceSets.main))
 +                packages(
 +                    "com.destroystokyo.paper", "io.papermc.paper", "org.spigotmc", "org.bukkit"
 +                )
@@ -165,7 +165,7 @@
 +            sharedLibrary.set(false)
 +            classpath.setFrom(tasks.named("jar"))
 +            dependencies {
-+                implementation("net.sf.jopt-simple:jopt-simple:5.0.4")
++                runtimeOnly("net.sf.jopt-simple:jopt-simple:5.0.4")
 +            }
 +        }
 +        create("gatherPGO") {
