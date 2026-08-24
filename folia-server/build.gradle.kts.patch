@@ -160,14 +160,14 @@
 +    }
 +    binaries {
 +        named("main") {
-+            imageName.set("folia")
++            imageName.set("libfolia")
 +            mainClass.set("org.bukkit.craftbukkit.Main")
-+            sharedLibrary.set(false)
-+            classpath.setFrom(tasks.jar)
-+            dependencies {
-+                runtimeOnly("net.sf.jopt-simple:jopt-simple:5.0.4")
-+            }
-+            usesLayer("folia-api")
++            classpath(tasks.jar)
++            classpath(configurations.runtimeClasspath)
++            buildArgs.addAll("-H:LayerCreate=module=java.base,module=jdk.jfr," +
++                    "module=java.scripting,module=java.sql,module=java.management,package=com.destroystokyo.paper," +
++                    "package=io.papermc.paper,package=org.spigotmc,package=org.bukkit,package=net.minecraft," +
++                    "package=com.mojang.logging,package=com.mojang.authlib.yggdrasil,package=com.mojang.brigadier")
 +        }
 +        create("gatherPGO") {
 +            classpath(tasks.jar)
