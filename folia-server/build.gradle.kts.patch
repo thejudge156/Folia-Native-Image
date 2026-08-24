@@ -126,7 +126,7 @@
      versionFamily(paperweight.minecraftVersion.map { it.split(".", "-").takeWhile { part -> part.toIntOrNull() != null }.take(2).joinToString(".") })
      version(paperweight.minecraftVersion)
  
-@@ -340,5 +_,79 @@
+@@ -340,5 +_,80 @@
                  nameResolver.set { project, _, version, build -> "$project-$version-$build.jar" }
              }
          }
@@ -168,6 +168,7 @@
 +                    "module=java.scripting,module=java.sql,module=java.management,package=com.destroystokyo.paper," +
 +                    "package=io.papermc.paper,package=org.spigotmc,package=org.bukkit,package=net.minecraft," +
 +                    "package=com.mojang.logging,package=com.mojang.authlib.yggdrasil,package=com.mojang.brigadier")
++            sharedLibrary.set(false)
 +        }
 +        create("gatherPGO") {
 +            classpath(tasks.jar)
