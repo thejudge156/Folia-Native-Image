@@ -11,9 +11,16 @@ pipeline {
 		}
 		stage('Setup Code Environment') {
 			when {
-				changeset 'folia-server/**/*'
-				changeset 'folia-api/**/*'
-				changeset 'Jenkinsfile'
+				allOf {
+					not { branch 'master' }
+					changeset "folia-server/**"
+					expression {  // there are changes in some-directory/...
+						sh(returnStatus: true, script: 'git diff  origin/master --name-only | grep --quiet "^folia-server/.*"') == 0
+					}
+					expression {   // ...and nowhere else.
+						sh(returnStatus: true, script: 'git diff origin/master --name-only | grep --quiet --invert-match "^folia-server/.*"') == 1
+					}
+				}
 			}
 			steps {
 				echo 'Patching...'
