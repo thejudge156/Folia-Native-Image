@@ -11,18 +11,19 @@ pipeline {
 		}
 		stage('Setup Code Environment') {
 			when {
-				changeset 'folia-server/**'
-				changeset 'folia-api/**'
+				changeset 'folia-server/**/*'
+				changeset 'folia-api/**/*'
+				changeset 'Jenkinsfile'
 			}
 			steps {
 				echo 'Patching...'
-				sh 'gradlew applyAllPatches'
+				sh '${env.WORKSPACE}/gradlew applyAllPatches'
 			}
 		}
 		stage('Build Base') {
 			steps {
 				echo 'Building base layer...'
-				sh 'gradlew nativeCompile --no-configuration-cache'
+				sh '${env.WORKSPACE}/gradlew nativeCompile --no-configuration-cache'
 				archiveArtifacts artifacts: '${env.WORKSPACE}/folia-server/build/native/nativeCompile/*', fingerprint: true
 			}
 		}
@@ -34,7 +35,7 @@ pipeline {
 			}
 			steps {
 				echo 'Building plugin image...'
-				sh 'gradlew nativePluginCompile --no-configuration-cache'
+				sh '${env.WORKSPACE}/gradlew nativePluginCompile --no-configuration-cache'
 				archiveArtifacts artifacts: '${env.WORKSPACE}/folia-server/build/native/nativePluginCompile/*', fingerprint: true
 			}
 		}
