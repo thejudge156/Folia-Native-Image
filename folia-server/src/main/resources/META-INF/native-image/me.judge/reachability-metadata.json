@@ -2257,6 +2257,15 @@
       ]
     },
     {
+      "type": "com.destroystokyo.paper.event.brigadier.CommandRegisteredEvent"
+    },
+    {
+      "type": "com.destroystokyo.paper.event.server.AsyncTabCompleteEvent"
+    },
+    {
+      "type": "com.destroystokyo.paper.event.server.PaperServerListPingEvent"
+    },
+    {
       "type": "com.fasterxml.jackson.databind.ObjectMapper"
     },
     {
@@ -2328,6 +2337,34 @@
       ]
     },
     {
+      "type": "com.mojang.authlib.yggdrasil.response.ErrorResponse",
+      "fields": [
+        {
+          "name": "details"
+        },
+        {
+          "name": "error"
+        },
+        {
+          "name": "errorMessage"
+        },
+        {
+          "name": "path"
+        }
+      ],
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "java.lang.String",
+            "java.lang.String",
+            "java.lang.String",
+            "java.util.Map"
+          ]
+        }
+      ]
+    },
+    {
       "type": "com.mojang.authlib.yggdrasil.response.HasJoinedMinecraftServerResponse",
       "methods": [
         {
@@ -2354,6 +2391,17 @@
     },
     {
       "type": "com.mojang.authlib.yggdrasil.response.ProfileAction"
+    },
+    {
+      "type": "com.mojang.brigadier.tree.CommandNode",
+      "methods": [
+        {
+          "name": "removeCommand",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        }
+      ]
     },
     {
       "type": "com.mojang.logging.plugins.LegacyXMLLayout"
@@ -2775,6 +2823,9 @@
       ]
     },
     {
+      "type": "com.sun.jndi.dns.DnsContextFactory"
+    },
+    {
       "type": "com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl",
       "methods": [
         {
@@ -2808,7 +2859,12 @@
       "type": "io.netty.bootstrap.ServerBootstrap$1"
     },
     {
-      "type": "io.netty.bootstrap.ServerBootstrap$ServerBootstrapAcceptor"
+      "type": "io.netty.bootstrap.ServerBootstrap$ServerBootstrapAcceptor",
+      "fields": [
+        {
+          "name": "childHandler"
+        }
+      ]
     },
     {
       "type": "io.netty.buffer.AbstractByteBufAllocator"
@@ -2818,6 +2874,9 @@
     },
     {
       "type": "io.netty.buffer.AdaptivePoolingAllocator$SizeClassedChunk"
+    },
+    {
+      "type": "io.netty.buffer.ByteBuf"
     },
     {
       "type": "io.netty.channel.AbstractChannelHandlerContext"
@@ -2833,7 +2892,15 @@
       "type": "io.netty.channel.DefaultChannelConfig"
     },
     {
-      "type": "io.netty.channel.DefaultChannelPipeline"
+      "type": "io.netty.channel.DefaultChannelPipeline",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "io.netty.channel.Channel"
+          ]
+        }
+      ]
     },
     {
       "type": "io.netty.channel.DefaultChannelPipeline$HeadContext"
@@ -2850,6 +2917,21 @@
         },
         {
           "name": "transferred"
+        }
+      ]
+    },
+    {
+      "type": "io.netty.channel.MultiThreadIoEventLoopGroup"
+    },
+    {
+      "type": "io.netty.channel.epoll.Epoll"
+    },
+    {
+      "type": "io.netty.channel.epoll.EpollDatagramChannel",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
         }
       ]
     },
@@ -2912,6 +2994,9 @@
     {
       "type": "io.netty.channel.epoll.NativeStaticallyReferencedJniMethods",
       "jniAccessible": true
+    },
+    {
+      "type": "io.netty.channel.local.LocalChannel"
     },
     {
       "type": "io.netty.channel.unix.Buffer",
@@ -2978,6 +3063,9 @@
       "jniAccessible": true
     },
     {
+      "type": "io.netty.channel.uring.IoUring"
+    },
+    {
       "type": "io.netty.handler.flow.FlowControlHandler"
     },
     {
@@ -2987,10 +3075,16 @@
       "type": "io.netty.handler.timeout.ReadTimeoutHandler"
     },
     {
+      "type": "io.netty.handler.timeout.WriteTimeoutHandler"
+    },
+    {
       "type": "io.netty.util.DefaultAttributeMap"
     },
     {
       "type": "io.netty.util.DefaultAttributeMap$DefaultAttribute"
+    },
+    {
+      "type": "io.netty.util.Recycler$DefaultHandle"
     },
     {
       "type": "io.netty.util.ReferenceCountUtil"
@@ -3032,7 +3126,16 @@
       ]
     },
     {
+      "type": "io.netty.util.internal.ObjectPool$ObjectCreator"
+    },
+    {
       "type": "io.netty.util.internal.RefCnt"
+    },
+    {
+      "type": "io.netty.util.internal.shaded.org.jctools.queues.atomic.BaseLinkedAtomicQueueConsumerNodeRef"
+    },
+    {
+      "type": "io.netty.util.internal.shaded.org.jctools.queues.atomic.BaseLinkedAtomicQueueProducerNodeRef"
     },
     {
       "type": "io.netty.util.internal.shaded.org.jctools.queues.atomic.BaseMpscLinkedAtomicArrayQueueColdProducerFields"
@@ -3066,6 +3169,17 @@
     },
     {
       "type": "io.papermc.paper.adventure.providers.MiniMessageProviderImpl"
+    },
+    {
+      "type": "io.papermc.paper.command.brigadier.CommandSourceStack"
+    },
+    {
+      "type": "io.papermc.paper.command.brigadier.PaperCommands",
+      "fields": [
+        {
+          "name": "invalid"
+        }
+      ]
     },
     {
       "type": "io.papermc.paper.configuration.ConfigurationPart"
@@ -3447,34 +3561,6 @@
           "name": "<init>",
           "parameterTypes": [
             "io.papermc.paper.configuration.GlobalConfiguration"
-          ]
-        }
-      ]
-    },
-    {
-      "type": "com.mojang.authlib.yggdrasil.response.ErrorResponse",
-      "fields": [
-        {
-          "name": "details"
-        },
-        {
-          "name": "error"
-        },
-        {
-          "name": "errorMessage"
-        },
-        {
-          "name": "path"
-        }
-      ],
-      "methods": [
-        {
-          "name": "<init>",
-          "parameterTypes": [
-            "java.lang.String",
-            "java.lang.String",
-            "java.lang.String",
-            "java.util.Map"
           ]
         }
       ]
@@ -5182,7 +5268,76 @@
       "type": "io.papermc.paper.entity.poi.PoiTypes"
     },
     {
+      "type": "io.papermc.paper.event.executor.MethodHandleEventExecutorTemplate/0x0000000019398000",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "io.papermc.paper.event.executor.MethodHandleEventExecutorTemplate/0x0000000019398400",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "io.papermc.paper.event.executor.MethodHandleEventExecutorTemplate/0x000000001951c000",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "io.papermc.paper.event.executor.MethodHandleEventExecutorTemplate/0x0000000019750800",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "io.papermc.paper.event.executor.MethodHandleEventExecutorTemplate/0x0000000019751400",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "io.papermc.paper.event.executor.MethodHandleEventExecutorTemplate/0x0000000019751800",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "io.papermc.paper.event.executor.MethodHandleEventExecutorTemplate/0x0000000019751c00",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "io.papermc.paper.plugin.entrypoint.classloader.group.PaperPluginClassLoaderStorage"
+    },
+    {
       "type": "io.papermc.paper.plugin.lifecycle.event.types.LifecycleEventTypeProviderImpl"
+    },
+    {
+      "type": "io.papermc.paper.plugin.manager.DummyBukkitPluginLoader"
     },
     {
       "type": "io.papermc.paper.registry.PaperRegistryAccess"
@@ -5322,6 +5477,9 @@
       ]
     },
     {
+      "type": "io.papermc.paper.threadedregions.RegionizedServer"
+    },
+    {
       "type": "io.papermc.paper.threadedregions.RegionizedTaskQueue$PrioritisedQueue$ChunkBasedPriorityTask",
       "fields": [
         {
@@ -5382,6 +5540,198 @@
     },
     {
       "type": "jakarta.servlet.Servlet"
+    },
+    {
+      "type": "java.awt.GraphicsEnvironment",
+      "jniAccessible": true,
+      "methods": [
+        {
+          "name": "isHeadless",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "java.awt.image.BufferedImage",
+      "jniAccessible": true,
+      "fields": [
+        {
+          "name": "colorModel"
+        },
+        {
+          "name": "imageType"
+        },
+        {
+          "name": "raster"
+        }
+      ],
+      "methods": [
+        {
+          "name": "getRGB",
+          "parameterTypes": [
+            "int",
+            "int",
+            "int",
+            "int",
+            "int[]",
+            "int",
+            "int"
+          ]
+        },
+        {
+          "name": "setRGB",
+          "parameterTypes": [
+            "int",
+            "int",
+            "int",
+            "int",
+            "int[]",
+            "int",
+            "int"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "java.awt.image.ColorModel",
+      "jniAccessible": true,
+      "fields": [
+        {
+          "name": "colorSpace"
+        },
+        {
+          "name": "colorSpaceType"
+        },
+        {
+          "name": "isAlphaPremultiplied"
+        },
+        {
+          "name": "is_sRGB"
+        },
+        {
+          "name": "nBits"
+        },
+        {
+          "name": "numComponents"
+        },
+        {
+          "name": "supportsAlpha"
+        },
+        {
+          "name": "transparency"
+        }
+      ],
+      "methods": [
+        {
+          "name": "getRGBdefault",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "java.awt.image.IndexColorModel",
+      "jniAccessible": true,
+      "fields": [
+        {
+          "name": "map_size"
+        },
+        {
+          "name": "rgb"
+        },
+        {
+          "name": "transparent_index"
+        }
+      ]
+    },
+    {
+      "type": "java.awt.image.Raster",
+      "jniAccessible": true,
+      "fields": [
+        {
+          "name": "dataBuffer"
+        },
+        {
+          "name": "height"
+        },
+        {
+          "name": "minX"
+        },
+        {
+          "name": "minY"
+        },
+        {
+          "name": "numBands"
+        },
+        {
+          "name": "numDataElements"
+        },
+        {
+          "name": "sampleModel"
+        },
+        {
+          "name": "sampleModelTranslateX"
+        },
+        {
+          "name": "sampleModelTranslateY"
+        },
+        {
+          "name": "width"
+        }
+      ]
+    },
+    {
+      "type": "java.awt.image.SampleModel",
+      "jniAccessible": true,
+      "fields": [
+        {
+          "name": "height"
+        },
+        {
+          "name": "width"
+        }
+      ],
+      "methods": [
+        {
+          "name": "getPixels",
+          "parameterTypes": [
+            "int",
+            "int",
+            "int",
+            "int",
+            "int[]",
+            "java.awt.image.DataBuffer"
+          ]
+        },
+        {
+          "name": "setPixels",
+          "parameterTypes": [
+            "int",
+            "int",
+            "int",
+            "int",
+            "int[]",
+            "java.awt.image.DataBuffer"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "java.awt.image.SinglePixelPackedSampleModel",
+      "jniAccessible": true,
+      "fields": [
+        {
+          "name": "bitMasks"
+        },
+        {
+          "name": "bitOffsets"
+        },
+        {
+          "name": "bitSizes"
+        },
+        {
+          "name": "maxBitSize"
+        }
+      ]
     },
     {
       "type": "java.beans.Introspector"
@@ -5449,6 +5799,9 @@
       ]
     },
     {
+      "type": "java.lang.Byte[]"
+    },
+    {
       "type": "java.lang.Character",
       "jniAccessible": true,
       "fields": [
@@ -5511,6 +5864,9 @@
       ]
     },
     {
+      "type": "java.lang.Double[]"
+    },
+    {
       "type": "java.lang.Float",
       "jniAccessible": true,
       "fields": [
@@ -5531,6 +5887,9 @@
       ]
     },
     {
+      "type": "java.lang.Float[]"
+    },
+    {
       "type": "java.lang.Integer",
       "jniAccessible": true,
       "fields": [
@@ -5549,6 +5908,9 @@
           ]
         }
       ]
+    },
+    {
+      "type": "java.lang.Integer[]"
     },
     {
       "type": "java.lang.Long",
@@ -5713,6 +6075,12 @@
           "parameterTypes": [
             "java.lang.String"
           ]
+        },
+        {
+          "name": "load",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
         }
       ]
     },
@@ -5756,6 +6124,9 @@
           "name": "TYPE"
         }
       ]
+    },
+    {
+      "type": "java.lang.Void[]"
     },
     {
       "type": "java.lang.foreign.AddressLayout"
@@ -5957,6 +6328,9 @@
     {
       "type": "java.net.PortUnreachableException",
       "jniAccessible": true
+    },
+    {
+      "type": "java.net.http.HttpClient"
     },
     {
       "type": "java.nio.Buffer",
@@ -6168,10 +6542,50 @@
       "type": "java.util.zip.CRC32C"
     },
     {
+      "type": "javax.imageio.spi.ImageReaderSpi"
+    },
+    {
+      "type": "javax.imageio.spi.ImageWriterSpi"
+    },
+    {
       "type": "javax.servlet.Servlet"
     },
     {
       "type": "jdk.internal.jrtfs.JrtFileSystemProvider"
+    },
+    {
+      "type": "net.lenni0451.commons.httpclient.executor.HttpClientExecutor",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": [
+            "net.lenni0451.commons.httpclient.HttpClient"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "net.md_5.bungee.chat.ComponentSerializer"
+    },
+    {
+      "type": "net.minecraft.commands.arguments.item.ArgumentItemPredicate$b"
+    },
+    {
+      "type": "net.minecraft.commands.arguments.item.ArgumentPredicateItemStack"
+    },
+    {
+      "type": "net.minecraft.commands.arguments.item.ItemInput"
+    },
+    {
+      "type": "net.minecraft.commands.arguments.item.ItemPredicateArgument$Result"
+    },
+    {
+      "type": "net.minecraft.commands.synchronization.ArgumentTypeInfos",
+      "fields": [
+        {
+          "name": "BY_CLASS"
+        }
+      ]
     },
     {
       "type": "net.minecraft.core.Direction$Axis[]"
@@ -6181,6 +6595,37 @@
     },
     {
       "type": "net.minecraft.core.FrontAndTop[]"
+    },
+    {
+      "type": "net.minecraft.core.Holder"
+    },
+    {
+      "type": "net.minecraft.core.IRegistry"
+    },
+    {
+      "type": "net.minecraft.core.Registry",
+      "methods": [
+        {
+          "name": "getValue",
+          "parameterTypes": [
+            "net.minecraft.resources.Identifier"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "net.minecraft.core.registries.BuiltInRegistries",
+      "fields": [
+        {
+          "name": "REGISTRY"
+        }
+      ]
+    },
+    {
+      "type": "net.minecraft.nbt.NBTBase"
+    },
+    {
+      "type": "net.minecraft.nbt.Tag"
     },
     {
       "type": "net.minecraft.network.CipherDecoder"
@@ -6904,6 +7349,12 @@
       ]
     },
     {
+      "type": "net.minecraft.network.protocol.login.ClientboundLoginCompressionPacket"
+    },
+    {
+      "type": "net.minecraft.network.protocol.login.ClientboundLoginFinishedPacket"
+    },
+    {
       "type": "net.minecraft.network.protocol.login.LoginPacketTypes",
       "fields": [
         {
@@ -6958,10 +7409,80 @@
       ]
     },
     {
+      "type": "net.minecraft.resources.Identifier",
+      "methods": [
+        {
+          "name": "parse",
+          "parameterTypes": [
+            "java.lang.String"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "net.minecraft.resources.MinecraftKey"
+    },
+    {
+      "type": "net.minecraft.resources.ResourceKey"
+    },
+    {
+      "type": "net.minecraft.resources.ResourceLocation"
+    },
+    {
+      "type": "net.minecraft.server.ArgumentItemPredicate$b"
+    },
+    {
+      "type": "net.minecraft.server.ArgumentPredicateItemStack"
+    },
+    {
+      "type": "net.minecraft.server.Item"
+    },
+    {
+      "type": "net.minecraft.server.ItemStack"
+    },
+    {
+      "type": "net.minecraft.server.MinecraftKey"
+    },
+    {
+      "type": "net.minecraft.server.MinecraftServer",
+      "methods": [
+        {
+          "name": "getConnection",
+          "parameterTypes": []
+        },
+        {
+          "name": "getServer",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "net.minecraft.server.NBTBase"
+    },
+    {
+      "type": "net.minecraft.server.ResourceKey"
+    },
+    {
       "type": "net.minecraft.server.network.LegacyQueryHandler"
     },
     {
-      "type": "net.minecraft.server.network.ServerConnectionListener$1"
+      "type": "net.minecraft.server.network.ServerConnectionListener",
+      "fields": [
+        {
+          "name": "channels"
+        }
+      ]
+    },
+    {
+      "type": "net.minecraft.server.network.ServerConnectionListener$1",
+      "methods": [
+        {
+          "name": "initChannel",
+          "parameterTypes": [
+            "io.netty.channel.Channel"
+          ]
+        }
+      ]
     },
     {
       "type": "net.minecraft.world.entity.boss.enderdragon.phases.DragonHoldingPatternPhase",
@@ -6984,6 +7505,12 @@
           ]
         }
       ]
+    },
+    {
+      "type": "net.minecraft.world.item.Item"
+    },
+    {
+      "type": "net.minecraft.world.item.ItemStack"
     },
     {
       "type": "net.minecraft.world.level.block.CopperGolemStatueBlock$Pose[]"
@@ -8547,7 +9074,64 @@
       "type": "org.apache.logging.slf4j.SLF4JServiceProvider"
     },
     {
+      "type": "org.apache.maven.repository.internal.DefaultArtifactDescriptorReader",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "org.apache.maven.repository.internal.DefaultModelCacheFactory",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "org.apache.maven.repository.internal.DefaultVersionRangeResolver",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "org.apache.maven.repository.internal.DefaultVersionResolver",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "org.apache.maven.repository.internal.SnapshotMetadataGeneratorFactory",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "org.apache.maven.repository.internal.VersionsMetadataGeneratorFactory",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
       "type": "org.bukkit.Art"
+    },
+    {
+      "type": "org.bukkit.Bukkit"
     },
     {
       "type": "org.bukkit.Fluid"
@@ -8562,13 +9146,25 @@
       "type": "org.bukkit.JukeboxSong"
     },
     {
+      "type": "org.bukkit.Keyed"
+    },
+    {
       "type": "org.bukkit.MusicInstrument"
+    },
+    {
+      "type": "org.bukkit.NamespacedKey"
     },
     {
       "type": "org.bukkit.Registry"
     },
     {
+      "type": "org.bukkit.Server"
+    },
+    {
       "type": "org.bukkit.Sound"
+    },
+    {
+      "type": "org.bukkit.UnsafeValues"
     },
     {
       "type": "org.bukkit.attribute.Attribute"
@@ -8583,6 +9179,30 @@
       "type": "org.bukkit.block.banner.PatternType"
     },
     {
+      "type": "org.bukkit.block.data.BlockData"
+    },
+    {
+      "type": "org.bukkit.command.SimpleCommandMap",
+      "fields": [
+        {
+          "name": "knownCommands"
+        }
+      ]
+    },
+    {
+      "type": "org.bukkit.craftbukkit.CraftServer",
+      "methods": [
+        {
+          "name": "getCommandMap",
+          "parameterTypes": []
+        },
+        {
+          "name": "getMinecraftVersion",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
       "type": "org.bukkit.craftbukkit.Main",
       "jniAccessible": true,
       "methods": [
@@ -8593,6 +9213,15 @@
           ]
         }
       ]
+    },
+    {
+      "type": "org.bukkit.craftbukkit.command.BukkitCommandWrapper"
+    },
+    {
+      "type": "org.bukkit.craftbukkit.command.VanillaCommandWrapper"
+    },
+    {
+      "type": "org.bukkit.craftbukkit.inventory.CraftItemStack"
     },
     {
       "type": "org.bukkit.craftbukkit.legacy.FieldRename"
@@ -8649,6 +9278,9 @@
       "type": "org.bukkit.entity.Villager$Type"
     },
     {
+      "type": "org.bukkit.entity.Warden"
+    },
+    {
       "type": "org.bukkit.entity.Wolf$SoundVariant"
     },
     {
@@ -8662,6 +9294,69 @@
       "fields": [
         {
           "name": "EVENT_TYPES"
+        }
+      ]
+    },
+    {
+      "type": "org.bukkit.event.block.BlockPistonExtendEvent",
+      "methods": [
+        {
+          "name": "getHandlerList",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "org.bukkit.event.block.BlockPistonRetractEvent",
+      "methods": [
+        {
+          "name": "getHandlerList",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "org.bukkit.event.block.BlockPlaceEvent",
+      "methods": [
+        {
+          "name": "getHandlerList",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "org.bukkit.event.player.AsyncPlayerPreLoginEvent",
+      "methods": [
+        {
+          "name": "getHandlerList",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "org.bukkit.event.player.PlayerJoinEvent",
+      "methods": [
+        {
+          "name": "getHandlerList",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "org.bukkit.event.server.PluginDisableEvent",
+      "methods": [
+        {
+          "name": "getHandlerList",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "org.bukkit.event.server.ServerLoadEvent",
+      "methods": [
+        {
+          "name": "getHandlerList",
+          "parameterTypes": []
         }
       ]
     },
@@ -8858,6 +9553,9 @@
     },
     {
       "type": "org.bukkit.material.Wool"
+    },
+    {
+      "type": "org.bukkit.plugin.Plugin"
     },
     {
       "type": "org.bukkit.potion.PotionEffectType"
@@ -9436,6 +10134,65 @@
       "type": "org.spongepowered.configurate.ListConfigValue"
     },
     {
+      "type": "reactor.netty.http.client.HttpClient"
+    },
+    {
+      "type": "sun.awt.image.ByteComponentRaster",
+      "jniAccessible": true,
+      "fields": [
+        {
+          "name": "data"
+        },
+        {
+          "name": "dataOffsets"
+        },
+        {
+          "name": "pixelStride"
+        },
+        {
+          "name": "scanlineStride"
+        },
+        {
+          "name": "type"
+        }
+      ]
+    },
+    {
+      "type": "sun.awt.image.IntegerComponentRaster",
+      "jniAccessible": true,
+      "fields": [
+        {
+          "name": "data"
+        },
+        {
+          "name": "dataOffsets"
+        },
+        {
+          "name": "pixelStride"
+        },
+        {
+          "name": "scanlineStride"
+        },
+        {
+          "name": "type"
+        }
+      ]
+    },
+    {
+      "type": "sun.java2d.Disposer",
+      "jniAccessible": true,
+      "methods": [
+        {
+          "name": "addRecord",
+          "parameterTypes": [
+            "java.lang.Object",
+            "long",
+            "long"
+          ]
+        }
+      ]
+    },
+    {
       "type": "sun.launcher.LauncherHelper",
       "jniAccessible": true,
       "fields": [
@@ -9488,6 +10245,14 @@
       "fields": [
         {
           "name": "theUnsafe"
+        }
+      ],
+      "methods": [
+        {
+          "name": "allocateInstance",
+          "parameterTypes": [
+            "java.lang.Class"
+          ]
         }
       ]
     },
@@ -9639,6 +10404,15 @@
     },
     {
       "type": "sun.security.provider.SHA5$SHA512",
+      "methods": [
+        {
+          "name": "<init>",
+          "parameterTypes": []
+        }
+      ]
+    },
+    {
+      "type": "sun.security.provider.SecureRandom",
       "methods": [
         {
           "name": "<init>",
@@ -9969,6 +10743,9 @@
       "glob": "META-INF/services/io.papermc.paper.plugin.lifecycle.event.types.LifecycleEventTypeProvider"
     },
     {
+      "glob": "META-INF/services/io.papermc.paper.plugin.provider.classloader.PaperClassLoaderStorage"
+    },
+    {
       "glob": "META-INF/services/io.papermc.paper.registry.RegistryAccess"
     },
     {
@@ -9988,6 +10765,21 @@
     },
     {
       "glob": "META-INF/services/java.time.zone.ZoneRulesProvider"
+    },
+    {
+      "glob": "META-INF/services/javax.imageio.spi.ImageInputStreamSpi"
+    },
+    {
+      "glob": "META-INF/services/javax.imageio.spi.ImageOutputStreamSpi"
+    },
+    {
+      "glob": "META-INF/services/javax.imageio.spi.ImageReaderSpi"
+    },
+    {
+      "glob": "META-INF/services/javax.imageio.spi.ImageTranscoderSpi"
+    },
+    {
+      "glob": "META-INF/services/javax.imageio.spi.ImageWriterSpi"
     },
     {
       "glob": "META-INF/services/javax.xml.parsers.DocumentBuilderFactory"
@@ -10018,6 +10810,9 @@
     },
     {
       "glob": "META-INF/services/org.apache.logging.log4j.util.PropertySource"
+    },
+    {
+      "glob": "META-INF/services/org.bukkit.plugin.PluginLoader"
     },
     {
       "glob": "META-INF/services/org.slf4j.spi.SLF4JServiceProvider"
@@ -10066,6 +10861,12 @@
     },
     {
       "glob": "data/.mcassetsroot"
+    },
+    {
+      "glob": "io/papermc/paper/event/executor/MethodHandleEventExecutorTemplate.class"
+    },
+    {
+      "glob": "jndi.properties"
     },
     {
       "glob": "libnuma.so"
@@ -10191,8 +10992,19 @@
       "glob": "sun/net/idn/uidna.spp"
     },
     {
+      "module": "java.desktop",
+      "glob": "sun/awt/resources/awt_en.properties"
+    },
+    {
+      "module": "java.desktop",
+      "glob": "sun/awt/resources/awt_en_US.properties"
+    },
+    {
       "module": "jdk.jfr",
       "glob": "jdk/jfr/internal/types/metadata.bin"
+    },
+    {
+      "bundle": "sun.awt.resources.awt"
     }
   ],
   "foreign": {
