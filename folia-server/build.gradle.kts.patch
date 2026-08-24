@@ -136,7 +136,7 @@
 +graalvmNative {
 +    agent {
 +        defaultMode.set("standard") // Default agent mode if one isn't specified using `-Pagent=mode_name`
-+        enabled.set(false) // Enables the agent
++        enabled.set(true) // Enables the agent
 +
 +        metadataCopy {
 +            metadataCopy {
@@ -175,10 +175,10 @@
 +            sharedLibrary.set(false)
 +        }
 +        create("plugin") {
-+            classpath("$rootDir/test-plugins/Geyser-Spigot.jar", "$rootDir/test-plugins/MainWrapper-1.0-SNAPSHOT.jar")
++            classpath("$rootDir/test-plugins/FoliaIPCTest-1.0-SNAPSHOT.jar", "$rootDir/test-plugins/MainWrapper-1.0-SNAPSHOT.jar")
 +            imageName.set("server")
 +            mainClass.set("me.judge.mainwrapper.Main")
-+            buildArgs.addAll("-H:LayerUse=$projectDir/build/native/nativeCompile/libfolia.nil", "-H:Preserve=path=$rootDir/test-plugins/Geyser-Spigot.jar")
++            buildArgs.addAll("-H:LayerUse=$projectDir/build/native/nativeCompile/libfolia.nil", "-H:Preserve=path=$rootDir/test-plugins/FoliaIPCTest-1.0-SNAPSHOT.jar")
 +            sharedLibrary.set(false)
 +        }
 +        named("test") {
