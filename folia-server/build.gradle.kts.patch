@@ -149,9 +149,9 @@
 +    layers {
 +        create("folia-api") {
 +            contents {
-+                modules("java.base", "jdk.jfr", "java.scripting", "java.sql", "java.management")
-+                from(configurations.runtimeClasspath.get().copy().minus(sourceSets.main.get().output))
-+                packages(
++                modules.addAll("java.base", "jdk.jfr", "java.scripting", "java.sql", "java.management")
++                fromConfiguration(configurations.runtimeClasspath)
++                packages.addAll(
 +                    "com.destroystokyo.paper", "io.papermc.paper", "org.spigotmc", "org.bukkit"
 +                )
 +            }
@@ -163,10 +163,11 @@
 +            imageName.set("folia")
 +            mainClass.set("org.bukkit.craftbukkit.Main")
 +            sharedLibrary.set(false)
-+            classpath.setFrom(tasks.named("jar"))
++            classpath.setFrom(tasks.jar)
 +            dependencies {
 +                runtimeOnly("net.sf.jopt-simple:jopt-simple:5.0.4")
 +            }
++            usesLayer("folia-api")
 +        }
 +        create("gatherPGO") {
 +            classpath(tasks.jar)
@@ -191,7 +192,6 @@
 +        }
 +    }
 +    binaries.all {
-+        usesLayer("folia-api")
 +        buildArgs.addAll(
 +            "--verbose", "--enable-http", "--enable-https",
 +            "-H:+AddAllCharsets", "-H:+IncludeAllLocales", "-H:IncludeResources=data/.*", "-march=compatibility",
