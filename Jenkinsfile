@@ -30,14 +30,14 @@ pipeline {
 			}
 			steps {
 				echo 'Patching...'
-				sh '${env.WORKSPACE}/gradlew applyAllPatches'
+				sh '$WORKSPACE/gradlew applyAllPatches'
 			}
 		}
 		stage('Build Base') {
 			steps {
 				echo 'Building base layer...'
-				sh '${env.WORKSPACE}/gradlew nativeCompile --no-configuration-cache'
-				archiveArtifacts artifacts: '${env.WORKSPACE}/folia-server/build/native/nativeCompile/*', fingerprint: true
+				sh '$WORKSPACE/gradlew nativeCompile --no-configuration-cache'
+				archiveArtifacts artifacts: '$WORKSPACE/folia-server/build/native/nativeCompile/*', fingerprint: true
 			}
 		}
 		stage('Plugins') {
@@ -48,8 +48,8 @@ pipeline {
 			}
 			steps {
 				echo 'Building plugin image...'
-				sh '${env.WORKSPACE}/gradlew nativePluginCompile --no-configuration-cache'
-				archiveArtifacts artifacts: '${env.WORKSPACE}/folia-server/build/native/nativePluginCompile/*', fingerprint: true
+				sh '$WORKSPACE/gradlew nativePluginCompile --no-configuration-cache'
+				archiveArtifacts artifacts: '$WORKSPACE/folia-server/build/native/nativePluginCompile/*', fingerprint: true
 			}
 		}
 	}
