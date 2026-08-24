@@ -150,7 +150,7 @@
 +        create("folia-api") {
 +            contents {
 +                modules("java.base", "jdk.jfr", "java.scripting", "java.sql", "java.management")
-+                from(configurations.runtimeClasspath.get().copy().minus(sourceSets.main))
++                from(configurations.runtimeClasspath.get().copy().minus(sourceSets.main.get().output))
 +                packages(
 +                    "com.destroystokyo.paper", "io.papermc.paper", "org.spigotmc", "org.bukkit"
 +                )
