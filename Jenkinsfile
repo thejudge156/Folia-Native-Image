@@ -23,7 +23,7 @@ pipeline {
 			steps {
 				echo 'Building base layer...'
 				sh 'gradlew nativeCompile --no-configuration-cache'
-				archiveArtifacts base: '${env.WORKSPACE}/folia-server/build/native/nativeCompile/*', fingerprint: true
+				archiveArtifacts artifacts: '${env.WORKSPACE}/folia-server/build/native/nativeCompile/*', fingerprint: true
 			}
 		}
 		stage('Plugins') {
@@ -35,7 +35,7 @@ pipeline {
 			steps {
 				echo 'Building plugin image...'
 				sh 'gradlew nativePluginCompile --no-configuration-cache'
-				archiveArtifacts plugins: '${env.WORKSPACE}/folia-server/build/native/nativePluginCompile/*', fingerprint: true
+				archiveArtifacts artifacts: '${env.WORKSPACE}/folia-server/build/native/nativePluginCompile/*', fingerprint: true
 			}
 		}
 	}
