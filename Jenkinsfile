@@ -2,6 +2,12 @@ pipeline {
 	agent any
 
 	stages {
+		stage('Checkout') {
+			steps {
+				echo 'Fetching source code from repository...'
+				checkout scm
+			}
+		}
 		stage('Setup Environment') {
 			steps {
 				echo 'Downloading GraalVM...'
