@@ -1,0 +1,20 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: TheJudge156 <colepatrickroberts@gmail.com>
+Date: Mon, 24 Aug 2026 15:20:54 -0700
+Subject: [PATCH] Fix requiring custom classloader for GraalVM
+
+
+diff --git a/src/main/java/org/bukkit/plugin/java/JavaPlugin.java b/src/main/java/org/bukkit/plugin/java/JavaPlugin.java
+index 0f3d3b757fbb034519be7ecf0f4ed18297a0c443..bb65f8fe8ab3f87203fa4a2870a5a7333e68b8ca 100644
+--- a/src/main/java/org/bukkit/plugin/java/JavaPlugin.java
++++ b/src/main/java/org/bukkit/plugin/java/JavaPlugin.java
+@@ -61,7 +61,8 @@ public abstract class JavaPlugin extends PluginBase {
+         if (this.getClass().getClassLoader() instanceof io.papermc.paper.plugin.provider.classloader.ConfiguredPluginClassLoader configuredPluginClassLoader) {
+             configuredPluginClassLoader.init(this);
+         } else {
+-            throw new IllegalStateException("JavaPlugin requires to be created by a valid classloader.");
++            // GraalVM can be funky. Don't use a custom classloader
++            init(org.bukkit.Bukkit.getServer(), description, dataFolder, file, getClass().getClassLoader(), description, this.logger); // Paper
+         }
+     }
+ 
